@@ -12,6 +12,9 @@
 // the project's config changing)
 
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+  const baseUrl = process.env.BASE_URL
+
+  return Object.assign({}, config, {
+    baseUrl
+  })
 }
